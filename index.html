@@ -4,9 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine 3D-Projekte</title>
+    <!-- CSS einbinden -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Bibliotheken (für 3D) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Hallo Welt!</h1>
-    <p>Willkommen auf meiner Portfolio-Seite. Bald gibt's hier 3D-Modelle.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Der Techniker</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projekte">Projekte</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero-Bereich -->
+    <section class="hero" id="home">
+        <h1>Meine 3D-Welt</h1>
+        <p>Hier präsentiere ich meine neuesten 3D-Modelle und Projekte – interaktiv und modern.</p>
+        <a href="#projekte" class="btn">Zu den Projekten</a>
+    </section>
+
+    <!-- 3D-Viewer Bereich -->
+    <div style="padding: 0 10%;">
+        <h2 style="color: white; text-align: center;">Aktuelles Modell</h2>
+        <div id="canvas-container"></div>
+    </div>
+
+    <!-- Projektkarten -->
+    <section class="projects" id="projekte">
+        <div class="card">
+            <h3>Projekt 1</h3>
+            <p>Beschreibung deines ersten 3D-Modells. Was ist besonders daran?</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
+        </div>
+        <div class="card">
+            <h3>Projekt 2</h3>
+            <p>Hier könnte ein weiteres Modell vorgestellt werden.</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
+        </div>
+        <div class="card">
+            <h3>Projekt 3</h3>
+            <p>Und noch ein Projekt – du kannst beliebig viele Karten hinzufügen.</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
+        </div>
+    </section>
+
+    <!-- JavaScript einbinden (als Modul, weil wir import verwenden) -->
+    <script type="module" src="main.js"></script>
 </body>
 </html>
