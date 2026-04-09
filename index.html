@@ -4,62 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine 3D-Projekte</title>
+    <!-- CSS einbinden -->
     <link rel="stylesheet" href="style.css">
-
+    <!-- Three.js Bibliotheken (für 3D) -->
     <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
         }
-    }
     </script>
 </head>
 <body>
-
-<nav class="navbar">
-    <div class="logo">Markus Dippel</div>
-</nav>
-
-<section class="hero">
-    <h1>Meine Projekte</h1>
-    <p>3D Modelle & Hardware Projekte</p>
-</section>
-
-<section class="projects">
-
-    <!-- Projekt 1 -->
-    <div class="card">
-        <div class="image-container" onclick="openGallery(0)">
-            <img src="BILD1" class="img1">
-            <img src="BILD2" class="img2">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Markus Dippel</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projekte">Projekte</a>
+            <a href="#kontakt">Kontakt</a>
         </div>
-        <h3>Netzteil</h3>
-        <p>USB-C Netzteil mit NFC</p>
+    </nav>
+
+    <!-- Hero-Bereich -->
+    <section class="hero" id="home">
+        <h1>Meine Projekte</h1>
+        <p>Hier präsentiere ich meine neuesten 3D-Modelle und Projekte </p>
+        <a href="#projekte" class="btn">Zu den Projekten</a>
+    </section>
+
+    <!-- 3D-Viewer Bereich -->
+    <div style="padding: 0 10%;">
+        <h2 style="color: white; text-align: center;">Aktuelles Modell</h2>
+        <div id="canvas-container"></div>
     </div>
 
-    <!-- Projekt 2 -->
-    <div class="card">
-        <div class="image-container" onclick="openGallery(1)">
-            <img src="BILD3" class="img1">
-            <img src="BILD4" class="img2">
+    <!-- Projektkarten -->
+    <section class="projects" id="projekte">
+        <div class="card">
+            <h3>Netzteil basirend auf dem SK45 Module</h3>
+            <p>USB-C Netzteil desing mit NFC Anleitung in der Backplade</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
         </div>
-        <h3>Projekt 2</h3>
-        <p>Beschreibung</p>
-    </div>
+        <div class="card">
+            <h3>Projekt 2</h3>
+            <p>Beschreibung</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
+        </div>
+        <div class="card">
+            <h3>Projekt 3</h3>
+            <p>Beschreibung</p>
+            <a href="#" class="btn" style="padding: 8px 20px;">Details</a>
+        </div>
+    </section>
 
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-        <img id="lightbox-img">
-    </div>
-
-    <button class="close" onclick="closeGallery()">✖</button>
-</div>
-
-<script type="module" src="script.js"></script>
-
+    <!-- JavaScript einbinden (als Modul, weil wir import verwenden) -->
+    <script type="module" src="main.js"></script>
 </body>
 </html>
