@@ -1,84 +1,140 @@
+/* style.css */
+/* Grundlegende Stile für die gesamte Seite */
 body {
     margin: 0;
-    font-family: sans-serif;
-    background: #0f2027;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
+    line-height: 1.6;
 }
 
-/* Layout */
-.projects {
+/* Container für die Navigation */
+.navbar {
     display: flex;
-    gap: 30px;
-    padding: 50px;
-}
-
-/* Cards */
-.card {
-    width: 300px;
-    cursor: pointer;
-}
-
-/* Hover Bilder */
-.image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: 0.4s;
-}
-
-.img2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.card:hover .img2 {
-    opacity: 1;
-}
-
-/* LIGHTBOX */
-.lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    display: none;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px 10%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Apple Zoom Effekt */
-.lightbox-content {
-    transform: scale(0.8);
-    opacity: 0;
-    transition: all 0.4s ease;
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00b4d8;
 }
 
-.lightbox.show .lightbox-content {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 20px;
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 25px;
-    background: none;
+.nav-links a {
     color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00b4d8;
+}
+
+/* Hero-Bereich (große Überschrift) */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: #00b4d8;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
     border: none;
     cursor: pointer;
+}
+
+.btn:hover {
+    background: #0077b6;
+}
+
+/* Projektkarten */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 60px 10%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    color: #00b4d8;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* 3D-Viewer Bereich (für Three.js Canvas) */
+#canvas-container {
+    width: 100%;
+    height: 600px;
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-links a {
+        margin: 0 15px;
+    }
+    .card {
+        width: 100%;
+    }
 }
